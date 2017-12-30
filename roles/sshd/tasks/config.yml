@@ -1,0 +1,11 @@
+---
+
+- name: disable password authenctication, challenge response authenctication, and root login
+  become: yes
+  copy:
+    src: ssh_config
+    dest: "/etc/ssh/ssh_config"
+    mode: 0644
+    owner: root
+    group: root
+  notify: restart sshd
