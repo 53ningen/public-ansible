@@ -1,0 +1,5 @@
+---
+
+- name: configure selinux
+  import_tasks: config.yml
+  tags: config_selinux
