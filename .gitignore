@@ -1,0 +1,4 @@
+inventories/load-test/
+inventories/tmp/
+*.retry
+
