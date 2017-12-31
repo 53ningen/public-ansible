@@ -1,0 +1,5 @@
+---
+
+- name: configure os
+  import_tasks: config.yml
+  tags: config_os

@@ -1,0 +1,10 @@
+---
+
+- name: update locale
+  become: yes
+  file:
+    src: locale.conf
+    dest: /etc/locale.conf
+    owner: root
+    group: root
+    mode: 0644

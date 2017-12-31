@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  become: yes
+  vars_prompt:
+    - name: given_hostname
+      prompt: "input hostname"
+      private: no
+  roles:
+    - roles/hostname
