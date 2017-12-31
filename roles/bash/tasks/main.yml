@@ -1,0 +1,5 @@
+---
+
+- name: configure bash
+  import_tasks: config.yml
+  tags: config_bash
