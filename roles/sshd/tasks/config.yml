@@ -4,7 +4,7 @@
   become: yes
   copy:
     src: ssh_config
-    dest: "/etc/ssh/ssh_config"
+    dest: "/etc/ssh/sshd_config"
     mode: 0644
     owner: root
     group: root

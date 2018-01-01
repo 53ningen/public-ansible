@@ -2,7 +2,7 @@
 
 - name: update locale
   become: yes
-  file:
+  copy:
     src: locale.conf
     dest: /etc/locale.conf
     owner: root
