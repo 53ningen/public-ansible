@@ -1,0 +1,35 @@
+---
+
+# official docs: https://mariadb.org/download/
+
+- name: add yum repository
+  become: yes
+  template:
+    src: mariadb.repo.j2
+    dest: /etc/yum.repos.d/mariadb.repo
+    mode: 0644
+    owner: root
+    group: root
+
+- name: yum install  MariaDB-server
+  become: yes
+  yum:
+    name: MariaDB-server
+    state: present
+
+- name: server.cnf
+  become: yes
+  template:
+    src: server.cnf.j2
+    dest: /etc/my.cnf.d/server.cnf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: enable MariaDB-server
+  become: yes
+  service:
+    name: mysql
+    state: restarted
+    enabled: yes
+  changed_when: no

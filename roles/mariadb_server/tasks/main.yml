@@ -1,0 +1,9 @@
+---
+
+- name: install mariadb_server
+  import_tasks: install.yml
+  tags: install_mariadb_server
+
+- name: configure mariadb_server
+  import_tasks: config.yml
+  tags: config_mariadb_server

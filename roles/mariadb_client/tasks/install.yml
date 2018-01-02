@@ -1,0 +1,18 @@
+---
+
+# official docs: https://mariadb.org/download/
+
+- name: add yum repository
+  become: yes
+  template:
+    src: mariadb.repo.j2
+    dest: /etc/yum.repos.d/mariadb.repo
+    mode: 0644
+    owner: root
+    group: root
+
+- name: yum install  MariaDB-client
+  become: yes
+  yum:
+    name: MariaDB-client
+    state: present

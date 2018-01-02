@@ -1,0 +1,5 @@
+---
+
+- name: install mariadb_client
+  import_tasks: install.yml
+  tags: install_mariadb_client
