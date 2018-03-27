@@ -1,0 +1,5 @@
+---
+
+- name: install pip
+  import_tasks: install.yml
+  tags: install_pip

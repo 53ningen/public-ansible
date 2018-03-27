@@ -1,0 +1,22 @@
+---
+
+- name: maintainer グループの作成
+  group:
+    name: "{{ maintainer_group }}"
+    gid: "{{ maintainer_group_id }}"
+  become: yes
+
+- name: maintainer ユーザーの作成
+  user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    group: "{{ maintainer_group }}"
+  become: yes
+  with_items: "{{ maintainers }}"
+
+- name: maintainer ユーザーの authorized_keys 配置
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.authorized_keys }}"
+  become: yes
+  with_items: "{{ maintainers }}"

@@ -1,0 +1,23 @@
+---
+
+rhel_packages:
+  - gcc
+  - gcc-c++
+  - pcre-devel
+  - zlib-devel
+  - git
+  - tree
+  - libjpeg-turbo-devel
+  - make
+  - net-tools
+  - telnet
+  - openssl-devel
+  - curl-devel
+  - sshpass
+  - telnet
+  - nc
+  - wget
+
+epel_packages:
+  - the_silver_searcher
+  - jq

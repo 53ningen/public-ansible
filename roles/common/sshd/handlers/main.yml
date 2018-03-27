@@ -1,0 +1,7 @@
+---
+
+- name: sshd の再起動
+  become: yes
+  service:
+    name: sshd
+    state: restarted

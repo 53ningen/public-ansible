@@ -1,0 +1,27 @@
+---
+
+- name: ec2-user ユーザーの削除
+  become: yes
+  user:
+    name: ec2-user
+    state: absent
+    remove: yes
+
+- name: ec2-user グループの削除
+  become: yes
+  group:
+    name: ec2-user
+    state: absent
+
+- name: cloud ユーザーの削除
+  become: yes
+  user:
+    name: cloud
+    state: absent
+    remove: yes
+
+- name: cloud グループの削除
+  become: yes
+  group:
+    name: cloud
+    state: absent

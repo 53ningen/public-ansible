@@ -1,0 +1,10 @@
+[all:vars]
+ENV="dev"
+
+[dev:children]
+apps
+[dev:vars]
+
+[apps]
+app-dev-server01
+[apps:vars]

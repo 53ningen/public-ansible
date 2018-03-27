@@ -1,0 +1,10 @@
+---
+
+nginx_group: nginx
+nginx_group_id: 701
+
+maintainer_group: maintainer
+maintainer_group_id: 12001
+
+common_group: common
+common_group_id: 13001

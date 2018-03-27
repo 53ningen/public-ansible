@@ -1,0 +1,8 @@
+---
+
+- name: chrony の reload
+  become: yes
+  systemd:
+    name: sshd
+    state: reloaded
+    enabled: yes

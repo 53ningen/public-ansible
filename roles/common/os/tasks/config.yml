@@ -1,0 +1,28 @@
+---
+
+- name: locale の設定
+  become: yes
+  copy:
+    src: locale.conf
+    dest: /etc/locale.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: 不要な service の無効化
+  become: yes
+  service:
+    name: "{{ item }}"
+    enabled: no
+    state: stopped
+  with_items: "{{ disabled_services }}"
+  ignore_errors: yes
+
+- name: 必要な services の有効化
+  become: yes
+  service:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  with_items: "{{ enabled_services }}"
+  ignore_errors: yes

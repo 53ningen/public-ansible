@@ -1,0 +1,18 @@
+---
+
+maintainers:
+- {
+    uid: 2001,
+    name: "{{ maintainer_group }}",
+    authorized_keys: "
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQClX7ILiybdh41hiIpveYbBanuUXVB57cYz9M5pr4XmxF6W3RHKCHJMkPcxnbnIUJpZQRvwkx+M+kgvVw3clF8jsQm4kY1ocj0NADOwIJ0Hoxpjzb47uPKxvOaAeVLz68W/2uL9+TO514OE7+lkTyHfaNClFXdRtybBIFJbCfUdIvyafpd3Vd7oOMUEql9KA3Y9qqdaORichy94JQQiEcWpv8LOej0qeOWxKw+c2gEoi5vH/i0rNL/5RDNUioLrcOKd8X3a0wa5pfo2I1pZ7QX9boSBhNhiU490yMuUNd5+V8rYI5t3jDo+EHBbmocEGlxVrJCfnZiuWh6LwGEs2h8rpTnQIUrR6jLnIXzQYkKo4FO09JU1U968R39WC3GPuM0FvOTSDzjrzxYuYTPL1ZMXst8bmxhI6odvYXDiMqCTYw/237opzq00v+oaHOvBAUDuKi4A2vysayVUbc2S/ODe5fooTD3GweRi7ddlyxq34SqohrBQjzg9i2PvxQN3EOKXBd67cvuQyNCit6bQYg5ydohDBmnWpo2wGTFJP7lwVsZQ8DFXQJT/BWSyOD/n2Dmo665UrQh+xE5XTlOl76sVcX06yLf4LpE29tQuKHVGYW2kBmTQeXStQDmowCS/t6Aha4Ii5n0poAcQeq3UJcBepzc5cjdrflxX3oAffkanLQ==
+
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeg735kklQUWe1lNmkrz2b0wE7L8chlEEoVh2LBGtVn5QBKEmRIh/D58QlHa/i0jRmoU4JzB7HmY8t/+2QzNrCpDT5I1HBJxAV/WnDjr+a8/XW8UVWHXIoKgI04n2mjaN2eqUyyzBtOiRNiofhMQCZTFLAEGaHmxy3RaB8ELR/B9dL6aIBANV0xP5IAUhuXoMHugmfFLYvAlw2rasc7qzTcRbiFHgqY2nC/JTe4zrDfLhImB2dRNgr/sRpzpJlyn1ygzaiPXM1mwUPA3xDI/Gu69FYtec0Q1y2MkD6OTYF6pFTGCA+10EMgXXXIQndCptIUzW+6okzD6//RXCVGeNt"
+  }
+
+commons:
+- {
+    uid: 3001,
+    name: "{{ common_group }}",
+    authorized_keys: ""
+  }

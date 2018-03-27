@@ -1,0 +1,5 @@
+---
+
+- name: sshd の設定
+  import_tasks: config.yml
+  tags: config_sshd

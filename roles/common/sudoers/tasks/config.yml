@@ -1,0 +1,21 @@
+---
+
+- name: sudoers.d の配置
+  become: yes
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/sudoers.d/{{ item }}"
+    owner: root
+    group: root
+    mode: 0440
+  with_items:
+    - maintainer
+
+- name: /etc/sudoers の配置
+  become: yes
+  template:
+    src: etc_sudoers.j2
+    dest: /etc/sudoers
+    owner: root
+    group: root
+    mode: 0440

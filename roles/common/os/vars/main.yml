@@ -1,0 +1,15 @@
+---
+
+enabled_services:
+  - atd
+  - chronyd
+  - crond
+  - fail2ban
+  - firewalld
+  - NetworkManager
+  - rsyslog
+  - sshd
+
+disabled_services:
+  - bluetooth
+  - netfs

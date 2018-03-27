@@ -1,0 +1,5 @@
+---
+
+- name: sudoers の設定
+  import_tasks: config.yml
+  tags: config_sudoers

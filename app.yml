@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  become: yes
+  gather_facts: yes
+  vars_files:
+    - group_vars/common.yml
+    - group_vars/user_group_id.yml
+  roles:
+    - roles/common/user
+    - roles/common/yum
+    - roles/common/bash
+    - roles/common/os
+    - roles/common/sshd
+    - roles/common/chrony
+    - roles/common/pip

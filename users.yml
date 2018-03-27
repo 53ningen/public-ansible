@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  become: yes
+  gather_facts: yes
+  vars_files:
+    - group_vars/user_group_id.yml
+  roles:
+    - roles/common/users
+    - roles/common/sudoers

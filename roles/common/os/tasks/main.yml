@@ -1,0 +1,5 @@
+---
+
+- name: サーバーの基本的な設定
+  import_tasks: config.yml
+  tags: config_os

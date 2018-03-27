@@ -1,0 +1,61 @@
+# Use public servers from the pool.ntp.org project.
+# Please consider joining the pool (http://www.pool.ntp.org/join.html).
+server {{ ntp_server }} iburst
+
+# Ignore stratum in source selection.
+stratumweight 0
+
+# Record the rate at which the system clock gains/losses time.
+driftfile /var/lib/chrony/drift
+
+# In first three updates step the system clock instead of slew
+# if the adjustment is larger than 10 seconds.
+makestep 10 3
+
+# Enable kernel synchronization of the real-time clock (RTC).
+rtcsync
+
+# Allow NTP client access from local network.
+#allow 192.168/16
+
+# Listen for commands only on localhost.
+bindcmdaddress 127.0.0.1
+bindcmdaddress ::1
+
+# Serve time even if not synchronized to any NTP server.
+#local stratum 10
+
+# Specify file containing keys for NTP and command authentication.
+keyfile /etc/chrony.keys
+
+# Specify key number for command authentication.
+commandkey 1
+
+# Generate new command key on start if missing.
+generatecommandkey
+
+# Disable logging of client accesses.
+noclientlog
+
+# Send message to syslog when clock adjustment is larger than 0.5 seconds.
+logchange 0.5
+
+# Specify directory for log files.
+logdir /var/log/chrony
+
+# Select which information is logged.
+#log measurements statistics tracking
+
+# This option allows you to configure the port on which chronyd will listen for NTP requests.
+# The compiled in default is udp/123, the standard NTP port. If set to 0, chronyd will not open the server
+# socket and will operate strictly in a client-only mode.
+port 0
+
+# User to which will chronyd switch on initialisation to drop root privileges.
+user chrony
+
+# Deny access to chronyc from other computers.
+cmddeny all
+
+# Lock chronyd into RAM so that it will never be paged out.
+lock_all

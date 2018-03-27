@@ -1,0 +1,10 @@
+[all:vars]
+ENV="prod"
+
+[prod:children]
+apps
+[prod:vars]
+
+[apps]
+app-server01
+[apps:vars]

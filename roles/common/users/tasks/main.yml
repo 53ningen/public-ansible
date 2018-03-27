@@ -1,0 +1,9 @@
+---
+
+- name: ルートになれるユーザーの作成
+  import_tasks: maintainer.yml
+  tags: user_maintainer
+
+- name: ルートになれないユーザーの作成
+  import_tasks: common.yml
+  tags: user_common

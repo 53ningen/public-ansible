@@ -1,0 +1,9 @@
+---
+
+- name: yum update
+  import_tasks: update.yml
+  tags: yum_update
+
+- name: yum install
+  import_tasks: install.yml
+  tags: yum_install

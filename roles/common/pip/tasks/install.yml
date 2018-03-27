@@ -1,0 +1,22 @@
+---
+
+- name: pip がインストールされているかを確認
+  shell: type pip
+  register: is_pip_not_exist
+  ignore_errors: yes
+  changed_when: no
+
+- name: install pip
+  shell: "curl -L https://bootstrap.pypa.io/get-pip.py | sudo python"
+  register: result
+  until: result|succeeded
+  retries: 1
+  delay: 3
+  when: is_pip_not_exist
+
+- name: 必要な python package のインストール
+  become: yes
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ pip_packages }}"

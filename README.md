@@ -11,6 +11,18 @@
 ansible -u <username> --private-key=~/.ssh/<key> -i inventories/... all -m ping
 ```
 
+## inventories
+
+* dev.yml: 開発環境の inventories
+* prod.yml: 本番環境の inventories
+
+
+## playbooks
+
+* init.yml: ホスト名の設定などを行う
+* users.yml: user, group の作成/削除などを行う
+* app.yml: 何らかのアプリケーションサーバー構築のためのベースとなる playbook
+
 
 ## ansible-lint
 

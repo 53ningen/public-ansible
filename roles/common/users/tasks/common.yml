@@ -1,0 +1,22 @@
+---
+
+- name: common グループの作成
+  group:
+    name: "{{ common_group }}"
+    gid: "{{ common_group_id }}"
+  become: yes
+
+- name: common ユーザーの作成
+  user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    group: "{{ common_group }}"
+  become: yes
+  with_items: "{{ commons }}"
+
+- name: common ユーザーの authorized_keys 配置
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.authorized_keys }}"
+  become: yes
+  with_items: "{{ commons }}"

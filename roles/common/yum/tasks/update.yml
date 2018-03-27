@@ -1,0 +1,7 @@
+---
+
+- name: yum update
+  become: yes
+  yum:
+    name: "*"
+    state: present

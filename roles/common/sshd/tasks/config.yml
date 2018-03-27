@@ -1,0 +1,20 @@
+---
+
+- name: ssh_config の配置
+  become: yes
+  copy:
+    src: ssh_config
+    dest: "/etc/ssh/ssh_config"
+    mode: 0600
+    owner: root
+    group: root
+
+- name: password authenctication, challenge response authenctication, root login の無効化
+  become: yes
+  copy:
+    src: sshd_config
+    dest: "/etc/ssh/sshd_config"
+    mode: 0600
+    owner: root
+    group: root
+  notify: sshd の再起動

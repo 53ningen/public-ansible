@@ -10,5 +10,5 @@ before_script:
   - export PATH=$PATH:`pwd`/ansible-lint/bin
 script:
   - popd
-  - ansible-lint **.yml
-
+  - ansible-lint init.yml
+  - ansible-lint users.yml
