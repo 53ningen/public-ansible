@@ -7,4 +7,4 @@
       prompt: "input hostname"
       private: no
   roles:
-    - roles/hostname
+    - roles/common/hostname
